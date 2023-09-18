@@ -12,4 +12,4 @@
 //example for the fetch(), the fetch API is an example of an API that uses promisees over callback
 //the difference is, the promise does not put on the 'Task queue', instead they got put on the 'Microtask queue' or 'PromiseJobs' that give higher priority
 
-//Change
+//Changes
