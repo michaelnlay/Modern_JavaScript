@@ -2,7 +2,8 @@
 const xhr = new XMLHttpRequest();
 
 //call the open method first
-xhr.open("Get", "./movies.json"); //take two things, the type of request, and url of the api or the files
+// xhr.open("Get", "./movies.json"); //take two things, the type of request, and url of the api or the files
+xhr.open("GET", "https://api.github.com/users/michaelnlay/repos");
 
 //create an event handler for event ready state
 
@@ -23,9 +24,9 @@ xhr.onreadystatechange = function () {
     //if you have an array that is JSON string, and yu want to parse it as a regular array
 
     const data = JSON.parse(this.responseText); //this return array
-    data.forEach((movie) => {
+    data.forEach((repo) => {
       const li = document.createElement("li");
-      li.innerHTML = `<strong>${movie.title} </strong> - ${movie.year}`;
+      li.innerHTML = `<strong>${repo.name} </strong> - ${repo.description}`;
       document.querySelector("#results").appendChild(li);
     });
   }
