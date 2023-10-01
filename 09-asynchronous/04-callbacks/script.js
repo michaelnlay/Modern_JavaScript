@@ -16,7 +16,7 @@ function createPost(post, cb) {
   setTimeout(() => {
     posts.push(post);
     cb();
-  }, 2000);
+  }, 12000);
 }
 
 function getPosts() {
@@ -26,7 +26,7 @@ function getPosts() {
       div.innerHTML = `<strong>${post.title}</strong> - ${post.body}`;
       document.querySelector("#posts").appendChild(div);
     });
-  }, 1000);
+  }, 5000);
 }
 
 //create post
