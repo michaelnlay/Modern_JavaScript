@@ -46,7 +46,13 @@ console.log("sum", sum(2, 3, 4, 5)); // Expect 14
 // Problem 3: write a function that takes two strings, A and B,
 //and return whether B is in A in a case-insensitive way
 
-function stringIncludes() {}
+function stringIncludes(a, b) {
+  //check if b in a, using the include method
+  const stringA = a.toLowerCase();
+  const stringB = b.toLowerCase();
+
+  return stringA.includes(stringB);
+}
 
 console.log(
   "stringIncludes",
@@ -55,7 +61,19 @@ console.log(
 
 // Problem 4: write a fucntion that takes an array of objects, and return an array of the objects'"name" property, only if that property exist
 
-function getName() {}
+function getName(arr) {
+  //create a new array that only contain name object key
+  //first we need to loop through that array of object to id the name, then push it to the new array
+  //return the objects' "name" property
+  const newArray = [];
+  arr.forEach((obj) => {
+    // console.log(obj);
+    if ("name" in obj) {
+      newArray.push(obj.name);
+    }
+  });
+  return newArray;
+}
 console.log(
   "getName",
   getName([
@@ -80,3 +98,41 @@ function delay(n) {}
   await delay(1000);
   console.timeEnd("Testing delay");
 })();
+
+//Problem 2:write a function that takes any number of arguments of type number and returns the sum of all the arguments
+function sum(...args) {
+  //convert the numbers inside the sum into an array, using rest operator
+  //loop through the array
+  //first, create an new variable call total to add all the numbers
+  let total = 0;
+  args.forEach((num) => {
+    //first check to make sure the type is number
+
+    total += num;
+  });
+  return total;
+}
+console.log("sum", sum(2, 3, 4, 5)); // Expect 14
+
+
+function getName(arr) {
+  // Use filter to select objects with a "name" property
+  // Use map to extract the "name" property from the selected objects
+  const newArray = arr
+    .filter((obj) => "name" in obj)
+    .map((obj) => obj.name);
+
+  return newArray;
+}
+
+console.log(
+  "getName",
+  getName([
+    { a: 1 },
+    { name: "Jane" },
+    {},
+    { name: "Mark" },
+    { name: "Sophia" },
+    { b: 2 },
+  ])
+); // expect ["Jane", "Mark", "Sophia"]
