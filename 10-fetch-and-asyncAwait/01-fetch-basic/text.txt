@@ -1,0 +1,2 @@
+you can use fetch to access files or server api
+
