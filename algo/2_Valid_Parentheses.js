@@ -21,28 +21,23 @@ Example 3:
 Input: s = "(]"
 Output: false
 */
-
 function isValidParenthesis(s) {
-  //create an object that map open bracket in corresponding to their close bracket
-  const bracketMap = {
+  const stack = [];
+  const hashMap = {
     "{": "}",
     "[": "]",
     "(": ")",
   };
-  //create an empty array call stack to keep track open bracket
-  let stack = [];
-  //loop through the object
-  for (const char of s) {
-    if (bracketMap[char]) {
-      stack.push(char);
+
+  for (i = 0; i < s.length; i++) {
+    if (hashMap[s[i]]) {
+      stack.push(hashMap[s[i]]);
+    } else if (stack.length > 0 && stack[stack.length - 1] === s[i]) {
+      stack.pop();
     } else {
-      const lastOpenBracket = stack.pop(); //pop out last open bracket
-      if (bracketMap[lastOpenBracket] !== char) {
-        return false;
-      }
+      return false;
     }
   }
-  //if stack is empties, all bracket has valid pair
   return stack.length === 0;
 }
 
