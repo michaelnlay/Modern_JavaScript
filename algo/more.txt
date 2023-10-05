@@ -1,0 +1,15 @@
+1. Linear Search
+2. Binary Search
+3. Bubble Sort
+4. Selection Sort
+5. Insertion Sort
+6. Factorial Calculation
+7. Fibonacci Sequence
+8. String Reversal 
+9. Palindrome Check
+10. Simple Math Operations
+11. Prime Number Check (not yet understand)
+12. Counting Characters in a String
+13. Min and Max in an array (done)
+14. Sum of Array elements
+15. Linear Equation Solver
