@@ -11,5 +11,5 @@
 11. Prime Number Check (not yet understand)
 12. Counting Characters in a String
 13. Min and Max in an array (done)
-14. Sum of Array elements
+14. Sum of Array elements (done)
 15. Linear Equation Solver
